@@ -1,0 +1,26 @@
+  public function slotting($startTime ,  $endTime , $no_student)
+    
+    {  
+       $start = strtotime($startTime);
+       $end = strtotime($endTime);
+       $diff = $end - $start;
+       
+       $min = $diff / 60;
+       $slot = $min / $no_student; 
+       $hour = $min / 60;
+    
+       echo "Total ".$min ." minutes. or".$hour." hour. You can give each student ".number_format($slot, )." miniutes <br>" ;
+       $interval = "+".number_format($slot, 0)." minutes";
+        echo $interval;
+       $next = strtotime("".$interval , strtotime($startTime));
+       echo date('h:i a', $next);
+        for ($i= 1 ;$i< $no_student; $i++ ) {
+       $next = strtotime("".$interval, $next );
+       echo date('h:i a', $next);
+        }
+
+
+       
+
+        
+    }
